@@ -53,7 +53,7 @@ function update(req, res) {
 module.exports = {
   create: [hasHref, create],
   list,
-  read: [urlExists, read],
+  read: [urlExists, addUseRecord, read],
   update: [urlExists, hasHref, update],
   urlExists,
 }

@@ -3,7 +3,7 @@ const uses = require(path.resolve('src/data/uses-data'))
 
 function addUseRecord(req, res, next) {
   const newUseRecord = {
-    id: uses.length++,
+    id: uses.length + 1,
     urlId: Number(req.params.urlId),
     time: Date.now(),
   }
@@ -27,7 +27,6 @@ function list(req, res) {
   res.json({
     data: uses.filter(urlId ? (use) => use.urlId == urlId : () => true),
   })
-  res.json({ data: uses })
 }
 
 function useExists(req, res, next) {
